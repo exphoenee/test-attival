@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Munkaóra nyilvántartó</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Munkaóra nyilvántartó</h1>
+</header>
+
+<main class="grid">
+  <section class="card" id="projects-card">
+    <h2>Projektek</h2>
+    <form id="project-form">
+      <input type="text" id="project-name" placeholder="Új projekt neve" required maxlength="60">
+      <input type="color" id="project-color" value="#4f46e5" title="Szín">
+      <button type="submit">Hozzáadás</button>
+    </form>
+    <ul id="project-list"></ul>
+    <p class="empty" id="project-empty" hidden>Még nincs projekt. Vegyél fel egyet!</p>
+
+    <h3>Havi összesítés</h3>
+    <ul id="month-summary"></ul>
+    <p class="total" id="month-total"></p>
+  </section>
+
+  <section class="card" id="calendar-card">
+    <div class="cal-head">
+      <button type="button" id="prev" aria-label="Előző hónap">‹</button>
+      <h2 id="month-label"></h2>
+      <button type="button" id="next" aria-label="Következő hónap">›</button>
+      <button type="button" id="today" class="secondary">Ma</button>
+    </div>
+    <div class="cal" id="calendar"></div>
+  </section>
+
+  <section class="card" id="day-card">
+    <h2 id="day-label"></h2>
+    <form id="entry-form">
+      <select id="entry-project" required></select>
+      <input type="number" id="entry-hours" min="0.25" max="24" step="0.25" placeholder="Óra" required>
+      <button type="submit">Rögzítés</button>
+    </form>
+    <ul id="entry-list"></ul>
+    <p class="empty" id="entry-empty" hidden>Erre a napra még nincs bejegyzés.</p>
+    <p class="total" id="day-total"></p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
