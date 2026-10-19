@@ -34,7 +34,12 @@
       <button type="button" id="next" aria-label="Következő hónap">›</button>
       <button type="button" id="today" class="secondary">Ma</button>
     </div>
-    <div class="cal" id="calendar"></div>
+    <div class="tabs" id="view-tabs">
+      <button type="button" data-view="month" class="active">Hónap</button>
+      <button type="button" data-view="week">Hét</button>
+      <button type="button" data-view="day">Nap</button>
+    </div>
+    <div id="calendar"></div>
   </section>
 
   <section class="card" id="day-card">
@@ -47,6 +52,20 @@
     <ul id="entry-list"></ul>
     <p class="empty" id="entry-empty" hidden>Erre a napra még nincs bejegyzés.</p>
     <p class="total" id="day-total"></p>
+  </section>
+
+  <section class="card" id="chart-card">
+    <div class="chart-head">
+      <h2>Melyik projekten dolgoztam a legtöbbet?</h2>
+      <select id="chart-range">
+        <option value="month">Kiválasztott hónap</option>
+        <option value="week">Kiválasztott hét</option>
+        <option value="year">Kiválasztott év</option>
+        <option value="all">Összesen</option>
+      </select>
+    </div>
+    <div id="chart"></div>
+    <p class="empty" id="chart-empty" hidden>Ebben az időszakban nincs rögzített munkaóra.</p>
   </section>
 </main>
 
